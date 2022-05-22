@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="./css/materialize.min.css" />
     <link rel="stylesheet" href="./css/estilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, "");
+        });
+    </script>
 </head>
 
 <body id="topo">
@@ -26,7 +32,8 @@
                     <li><a href="#importancia" class="sidenav-close">Importância</a></li>
                 </ul>
 
-                <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-med-and-up">
+                <a href="#" data-target="slide-out" class="sidenav-trigger
+                        hide-on-med-and-up">
                     <i class="material-icons">menu</i>
                 </a>
 
@@ -37,19 +44,19 @@
     <ul id="slide-out" class="sidenav nav purple darken-1">
         <li><a href="#fevereiroRoxo" class="sidenav-close">Fevereiro Roxo</a></li>
         <li>
-            <div class="divider  purple darken-4"></div>
+            <div class="divider purple darken-4"></div>
         </li>
         <li><a href="#alzheimer" class="sidenav-close">Alzheimer</a></li>
         <li>
-            <div class="divider  purple darken-4"></div>
+            <div class="divider purple darken-4"></div>
         </li>
         <li><a href="#lupus" class="sidenav-close">Lúpus</a></li>
         <li>
-            <div class="divider  purple darken-4"></div>
+            <div class="divider purple darken-4"></div>
         </li>
         <li><a href="#fibromialgia" class="sidenav-close">Fibromialgia</a></li>
         <li>
-            <div class="divider  purple darken-4"></div>
+            <div class="divider purple darken-4"></div>
         </li>
         <li><a href="#importancia" class="sidenav-close">Importância</a></li>
     </ul>
@@ -58,476 +65,127 @@
 
 
         <div class="fixed-action-btn nav">
-            <a class="btn-floating btn-large orange" href="#topo">
+            <a class="btn-floating btn-large purple" href="#topo">
                 <i class="large material-icons">keyboard_arrow_up</i>
             </a>
         </div>
 
 
 
-        <section id="fevereiroRoxo">
-            <div class="container" style="padding-top: 50px;">
-                <div class="row">
-                    <div class="col s12">
-                        <h3 class="center" style="color:rgb(67, 0, 143); font-weight:900;">Fevereiro Roxo</h3>
-                    </div>
-                    <div class="centralizar col s12">
-                        <div class="col l4 hide-on-med-and-down">
-                            <img src="./img/fevereiroRoxo.jpeg" alt="Fevereiro Roxo" id="imgFevereiroRoxo" class="responsive-img">
-                        </div>
-                        <div class="col s12 m12 l8">
-                            A campanha Fevereiro Roxo tem como forma conscientizar a população em relação a 3 doenças: Lúpus Eritematoso Sistêmico, Alzheimer e Fibromialgia.
-                            <br/> É apoiada pela Sociedade Brasileira de Clínica Médica (SBCM) e visa informar as pessoas sobre a importância do diagnóstico precoce em casos como esses. No entanto, apesar de serem distintas, as doenças têm em comum o
-                            fato de não possuir cura. Ou seja, motivo que reforça a importância de um diagnóstico correto para que o tratamento seja feito de forma eficaz e segura. Assim, proporcionando bem-estar e qualidade de vida.
-                            <br/>A campanha Fevereiro Roxo é uma maneira de refletir na população a importância de proporcionar bem-estar e qualidade de vida para pessoas portadoras de doenças crônicas, como o lúpus, Alzheimer e fibromialgia.
+
+        <section id="formulario">
+            <div class="container">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <h1>Envie uma mensagem para nós</h1>
                         </div>
                     </div>
 
-                </div>
+                    <fieldset>
+                        <legend>Dados pessoais</legend>
+                        <div class="row">
+
+                            <div class="input-field col
+                                        s6">
+                                <input placeholder="Informe seu nome aqui" required id="nome" type="text" class="validate">
+                                <label for="nome">Nome
+                                            <img src="./img/asterisco.png" class="asterisco"
+                                                alt="Obrigatório" /></label>
+                            </div>
+                            <div class="input-field col
+                                        s6">
+                                <input placeholder="dd/mm/aaaa" id="nasc" type="text" class="validate">
+                                <label for="nasc">Data
+                                            de Nascimento
+                                            (dd/mm/aaaa)</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col
+                                        s12">
+                                <input id="email" type="email" required class="validate">
+                                <label for="email">Email
+                                            <img src="./img/asterisco.png" class="asterisco" class="asterisco"
+                                                alt="Obrigatório" /></label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Comentário</legend>
+                        <div class="row">
+                            <div class="input-field col
+                                        s12">
+                                <textarea id="mensagem" class="materialize-textarea"></textarea>
+                                <label for="mensagem">Deixe seu comentário <img src="./img/asterisco.png" class="asterisco"
+                                    alt="Obrigatório" /></label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="input-field col
+                                        s12 center-align">
+                            <a class="waves-effect
+                                            waves-light btn
+                                            modal-trigger" onclick="confirmar()" href="#modalForm">Enviar</a>
+                        </div>
+                    </div>
+
+                </form>
             </div>
-        </section>
-
-        <section id="origem">
-            <div class="container" style="padding-bottom: 20px;">
-                <a class="waves-effect waves-light btn purple" onclick="mostrarTexto()" style="width: 100%;"><i class="material-icons right">keyboard_arrow_down</i>Saiba mais</a>
-                <p id="txtSaibaMais">A campanha do Fevereiro Roxo foi criada em 2014, na cidade de Uberlândia (Minas Gerais). Seu lema é: “se não houver cura, que ao menos haja conforto”, aludindo à importância de proporcionar bem-estar aos portadores de doenças crônicas.
-                    Não existe um calendário oficial de conscientização. O trabalho geralmente é feito por ONGs e, muitas vezes, apoiado por prefeituras e governos estaduais, que promovem palestras, ações de informação sobre as doenças e até mutirões
-                    de saúde.
-                    <br><br> Essas medidas são importantes porque, além de darem visibilidade às doenças e a seus sintomas, incentivam que aqueles que suspeitam de algum problema procurem por um diagnóstico. O uso de lacinhos coloridos, inspirado nas
-                    ações de conscientização do câncer de mama, é uma forma alegre e de forte apelo visual para chamar atenção sobre a importância de conhecer e diagnosticar tais quadros.
-                    <br><br> Como as campanhas não são unificadas, em fevereiro também há a promoção da conscientização sobre a leucemia, o tipo mais comum de câncer, e a importância de se cadastrar como doador de medula óssea. Essa ação é chamada de
-                    Fevereiro Laranja.
-                    <br><br> Lembre-se: entender as questões relacionadas a doenças graves é importante para cuidar da sua saúde e ajudar a conscientizar as pessoas que você conhece.
-                </p>
             </div>
-        </section>
-
-        <section id="alzheimer">
-            <div class="container escurinho" style=" padding-top: 50px;">
-                <h3 class="center">Alzheimer</h3>
-                <p>A Doença de Alzheimer (DA) é um transtorno neurodegenerativo progressivo e fatal que se manifesta pela deterioração cognitiva e da memória, comprometimento progressivo das atividades de vida diária e uma variedade de sintomas neuropsiquiátricos
-                    e de alterações comportamentais.
-                    <br> A doença instala-se quando o processamento de certas proteínas do sistema nervoso central começa a dar errado.
-                    <br><br> A doença de Alzheimer costuma evoluir para vários estágios de forma lenta e inexorável, ou seja, não há o que possa ser feito para barrar o avanço da doença. A partir do diagnóstico, a sobrevida média das pessoas acometidas
-                    por Alzheimer oscila entre 8 e 10 anos. O quadro clínico costuma ser dividido em quatro estágios:
-
-                    <br>
-                    <strong>Estágio 1 (forma inicial):</strong> alterações na memória, na personalidade e nas habilidades visuais e espaciais.
-                    <br>
-                    <strong>Estágio 2 (forma moderada):</strong> dificuldade para falar, realizar tarefas simples e coordenar movimentos. Agitação e insônia.
-                    <br>
-                    <strong>Estágio 3 (forma grave):</strong> resistência à execução de tarefas diárias. Incontinência urinária e fecal. Dificuldade para comer. Deficiência motora progressiva.
-                    <br>
-                    <strong>Estágio 4 (terminal):</strong> restrição ao leito. Mutismo. Dor à deglutição. Infecções intercorrentes.
-
-                    <br/> <br/>Os cuidados dedicados às pessoas com Alzheimer, porém, devem ocorrer em tempo integral.<br> Cuidadores, enfermeiras, outros profissionais e familiares, mesmo fora do ambiente dos centros de referência, hospitais e clínicas,
-                    podem encarregar-se de detalhes relativos à alimentação, ambiente e outros aspectos que podem elevar a qualidade de vida dos pacientes.
-                </p>
-                <div class="row">
-                    <div class="col s12">
-                        <ul class="tabs purple darken-5">
-                            <li class="tab col s12 m4"><a class=" white-text active" href="#sintomasAlz">Sintomas</a></li>
-                            <li class="tab col s12 m4"><a class=" white-text" href="#prevencaoAlz">Prevenção</a></li>
-                            <li class="tab col s12 m4"><a class=" white-text" href="#tratamentoAlz">Tratamento</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div id="sintomasAlz" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            <div class="col m12 center">
-                                Os principais sintomas são: <strong>Perda de memória e Confusão</strong>.<br> Porém o paciente ainda pode apresentar problemas nas seguintes áreas:
-                            </div>
-                            <div class="col s12 m4 xl3">
-                                <h6>Cognitiva</h6>
-                                <ul class="listSint">
-                                    <li>
-                                        Declínio Mental;
-                                    </li>
-                                    <li>
-                                        Dificuldade para pensar e compreender;
-                                    </li>
-                                    <li>
-                                        Desorientação;
-                                    </li>
-                                    <li>
-                                        Incapacidade de reconhecer coisas comuns;
-                                    </li>
-                                    <li>
-                                        Confusão Mental.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col s12 m4 xl3">
-                                <h6>Comportamental</h6>
-                                <ul class="listSint">
-                                    <li>
-                                        Fala embaralhada;
-                                    </li>
-                                    <li>
-                                        Agressão;
-                                    </li>
-                                    <li>
-                                        Mudanças de personalidade;
-                                    </li>
-                                    <li>
-                                        Repetição sem sentido das próprias palavras;
-                                    </li>
-                                    <li>
-                                        Dificuldade para exercer funções do dia a dia.
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="col s12 m4 xl3">
-                                <h6>Humor</h6>
-                                <ul class="listSint">
-                                    <li>
-                                        Apatia;
-                                    </li>
-                                    <li>
-                                        Descontentamento Geral;
-                                    </li>
-                                    <li>
-                                        Mudanças de humor;
-                                    </li>
-                                    <li>
-                                        Raiva;
-                                    </li>
-                                    <li>
-                                        Solidão.
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="col s12 m4 xl3">
-                                <h6>Psicológica</h6>
-                                <ul class="listSint">
-                                    <li>
-                                        Alucinação;
-                                    </li>
-                                    <li>
-                                        Depressão;
-                                    </li>
-                                    <li>
-                                        Paranoia.
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col s12 m4 xl3">
-                                <h6>Muscular</h6>
-                                <ul class="listSint">
-                                    <li>
-                                        Contrações musuclares ritmicas;
-                                    </li>
-                                    <li>
-                                        Incapacidade de coordenar movimentos musculares.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div id="prevencaoAlz" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            <div class="col m12">
-                                Apesar de não possuir uma forma específica de prevenção, uma cabeça ativa e boa vida social, junto com bons hábitos e estilos podem retardar a manifestação da doença. <br> Através disso, bons atos para se tomar ao tentar
-                                previnir a doença são:
-                            </div>
-                            <div class="col s12 m12 xl12">
-                                <ul class="listSint">
-                                    <li>
-                                        Atividades em grupo;
-                                    </li>
-                                    <li>
-                                        Não consumir bebida alcoólica;
-                                    </li>
-                                    <li>
-                                        Ter alimentação saudável;
-                                    </li>
-                                    <li>
-                                        Manter a mente ativa através de leitura, estudo, exercícios, jogos inteligentes;
-                                    </li>
-                                    <li>
-                                        Atividade físicas regulares.
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div id="tratamentoAlz" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            O tratamento do alzheimer é medicamentoso e os pacientes têm à disposição a oferta de medicamentos capazes de minimizar os distúrbios da doença, que devem ser prescritos pela equipe médica. O objetivo do tratamento medicamentoso é, também, propiciar a
-                            estabilização do comprometimento cognitivo, do comportamento e da realização das atividades da vida diária (ou modificar as manifestações da doença), com um mínimo de efeitos adversos.
-                            <br><br> Por isso, no âmbito do Ministério da Saúde, está disponível nas unidades de saúde de todo o país, o medicamento Rivastigmina adesivo transdérmico para o tratamento de demência para Doença de Alzheimer. Este tratamento
-                            está previsto no Protocolo Clínico e Diretrizes Terapêuticas (PCDT) desta condição clínica, que além do adesivo, preconiza o uso de medicamentos como: Donepezila, Galantamina, Rivastigmina e Memantina.
-                            <br><br> O acesso a esses medicamentos ocorre por meio do Componente Especializado da Assistência Farmacêutica (CEAF), do Ministério da Saúde, e é uma estratégia de acesso a medicamentos no âmbito do SUS, caracterizado pela
-                            busca da garantia da integralidade do tratamento medicamentoso, em nível ambulatorial, cujas linhas de cuidado estão definidas em Protocolos Clínicos e Diretrizes Terapêuticas publicados pelo Ministério da Saúde.
-                        </div>
-                    </div>
-
-                </div>
-        </section>
-
-        <section id="lupus">
-            <div class="container escurinho" style=" padding-top: 50px;">
-                <h3 class="center">Lúpus</h3>
-                <p>Lúpus é uma doença inflamatória autoimune, que pode afetar múltiplos órgãos e tecidos, como pele, articulações, rins e cérebro. Em casos mais graves, se não tratada adequadamente, pode matar. O nome científico da doença é "Lúpus Eritematoso
-                    Sistêmico (LES)".
-                    <br> <br> Mais comum nas mulheres jovens, como é o caso de Selena Gomez e Lady Gaga, o transtorno pode ser brando em determinados casos e, em outros, incapacitante ou mesmo fatal. E seu curso é imprevisível. Às vezes, o indivíduo fica
-                    anos sem nenhum sintoma e, de repente, volta a sofrer com dores e outras complicações. Até por isso é tão crucial seguir o tratamento e as orientações dos especialistas.
-                    <br><br> O Lúpus pode ser manifestar de quatro formas diferentes, que têm causas distintas. As principais formas da doença são:
-                    <br>
-                    <strong>Lúpus Discoide:</strong> esse tipo de lúpus fica limitado à pele da pessoa. Pode ser identificado com o surgimento de lesões avermelhadas com tamanhos, formatos e colorações específicas na pele, especialmente no rosto, na nuca
-                    e/ou no coro cabeludo.
-                    <br>
-                    <strong>Lúpus Sistêmico:</strong> esse tipo de lúpus é o mais comum e pode ser leve ou grave, conforme cada situação. Nessa forma da doença, a inflamação acontece em todo o organismo da pessoa, o que compremete vários órgãos ou sistemas,
-                    além da pele, como rins, coração, pulmões, sangue e articulações. Algumas pessoas que têm o lúpus discoide podem, eventualmente, evoluir para o lúpus sistêmico.
-                    <br>
-                    <strong>Lúpus induzido por drogas:</strong> essa forma do lúpus também é comum e acontece porque substância de algumas drogas e/ou medicamentos podem provocar inflamação com sintomas parecidos com o lúpus sistêmico. No entanto, a doença,
-                    nesse caso, tende a desaparecer assim que o uso da substância terminar.
-                    <br>
-                    <strong>Lúpus neonatal:</strong> esse tipo de lúpus é bastante raro e afeta filhos recém-nascidos de mulheres que têm lúpus. Normalmente, ao nascer, a criança pode ter erupções na pele, problemas no fígado ou baixa contagem de células
-                    sanguíneas, mas esses sintomas tendem a desaparecer naturalmente após alguns meses.
-
-                </p>
-
-                <div class="row">
-                    <div class="col s12">
-                        <ul class="tabs purple darken-5">
-                            <li class="tab col s12 m4"><a class=" white-text active" href="#sintomasLup">Sintomas</a></li>
-                            <li class="tab col s12 m4"><a class=" white-text" href="#prevencaoLup">Prevenção</a></li>
-                            <li class="tab col s12 m4"><a class=" white-text" href="#tratamentoLup">Tratamento</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div id="sintomasLup" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            <div class="col m12">
-                                Os sintomas do lúpus podem surgir de repente ou se desenvolver lentamente. Eles também podem ser moderados ou graves, temporários ou permanentes. A maioria dos pacientes com lúpus apresenta sintomas moderados, que surgem esporadicamente, em crises, nas
-                                quais os sintomas se agravam por um tempo e depois desaparecem.
-                                <br> Os sinais comuns são:
-                            </div>
-                            <div class="col s12 m6">
-                                <ul class="listSint">
-                                    <li>
-                                        Fadiga;
-                                    </li>
-                                    <li>
-                                        Febre;
-                                    </li>
-                                    <li>
-                                        Dor nas articulações;
-                                    </li>
-                                    <li>
-                                        Rigidez muscular e inchaços;
-                                    </li>
-                                    <li>
-                                        Rash Cutâneo - vermelhidão na face em forma de "borboleta";
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col s12 m6">
-                                <ul class="listSint">
-                                    <li>
-                                        Lesões na pele que surgem ou pioram quando expostas ao sol;
-                                    </li>
-                                    <li>
-                                        Dificuldade para respirar;
-                                    </li>
-                                    <li>
-                                        Sensibilidade à luz do sol;
-                                    </li>
-                                    <li>
-                                        Desconforto geral, ansiedade, mal-estar;
-                                    </li>
-                                    <li>
-                                        Linfonodos aumentados.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="prevencaoLup" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            <div class="col m12">
-                                Ainda não existem formas conhecidas de se prevenir o Lúpus, tendo em vista que as causas da doença ainda não são totalmente conhecidas e também não há vacinas.
-                                <br> No entanto, evitar gatilhos para o Lúpus se desenvolver são fundamentais. Algumas das maneiras são:
-                            </div>
-                            <div class="col s12 m12 xl12">
-                                <ul class="listSint">
-                                    <li>
-                                        Hábitos e estilo e vidas saudáveis;
-                                    </li>
-                                    <li>
-                                        Alimentação saudável;
-                                    </li>
-                                    <li>
-                                        Evitar exposição prolongada ao sol;
-                                    </li>
-                                    <li>
-                                        Cuidando de sua saúde regularmente.
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div id="tratamentoLup" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            O tratamento do Lúpus, assim como para outras doenças crônicas como câncer, hipertensão e diabetes, é mais paliativo e tem por objetivo controlar os sintomas, melhorando a qualidade de vida da pessoa. Isso porque, até o momento, Lúpus não tem cura.
-
-                            <br>O tratamento é diferenciado para cada caso, conforme os níveis de intensidade e agressividade da doença. Casos leves podem utilizar:
-                            <ul class="listSint">
-                                <li>Anti-inflamatórios não esteroides para artrite e pleurisia;</li>
-                                <li>Protetor solar para as lesões de pele;</li>
-                                <li>Corticoide tópico para pequenas lesões na pele;</li>
-                                <li>Droga antimalárica e coirticoides ed baixa dosagem para os sintomas de pele e artrite.</li>
-                            </ul>
-                            Já em Lúpus graves:
-                            <ul class="listSint">
-                                <li>Alta dosagem de corticoides ou medicmaentos para diminuir a resposta do sistema imunológico do corpo;</li>
-                                <li>Drogas ciitotóxicas, quando não houver melhora com corticoides ou quando os sintomas piorarem depois de interromper o uso.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="fibromialgia">
-            <div class="container escurinho" style=" padding-top: 50px;">
-                <h3 class="center">Fibromialgia</h3>
-                <p>A síndrome da fibromialgia (FM) é uma síndrome clínica que se manifesta com dor no corpo todo, principalmente na musculatura. Junto com a dor, a fibromialgia cursa com sintomas de fadiga (cansaço), sono não reparador (a pessoa acorda cansada)
-                    e outros sintomas como alterações de memória e atenção, ansiedade, depressão e alterações intestinais. Uma característica da pessoa com FM é a grande sensibilidade ao toque e à compressão da musculatura pelo examinador ou por outras
-                    pessoas.
-                    <br> Além disso, a síndrome costuma aparecer em quem sofre de estresse crônico ou passou por situações graves de trauma físico, ou psicológico. “Essas condições liberam hormônios específicos, que geram um desequilíbrio na forma como
-                    os indivíduos sentem dor. Eles se tornam mais sensíveis a ela”, explica o reumatologista.<br> Apesar de não haver uma resposta exata sobre a causa da fibromialgia, sabe-se que ela não é uma doença autoimune nem inflamatória. O mecanismo
-                    de desenvolvimento da dor é diferente.
-                    <br><br>A fibromialgia é um problema bastante comum, visto em pelo menos em 5% dos pacientes que vão a um consultório de Clínica Médica e em 10 a 15% dos pacientes que vão a um consultório de Reumatologia. De cada 10 pacientes com
-                    fibromialgia, sete a nove são mulheres. Não se sabe a razão porque isto acontece. Não parece haver uma relação com hormônios, pois a fibromialgia afeta as mulheres tanto antes quanto depois da menopausa. Talvez os critérios utilizados
-                    hoje no diagnóstico da FM tendam a incluir mais mulheres. A idade de aparecimento da fibromialgia é geralmente entre os 30 e 60 anos. Porém, existem casos em pessoas mais velhas e também em crianças e adolescentes.
-
-                </p>
-
-                <div class="row">
-                    <div class="col s12">
-                        <ul class="tabs purple darken-5">
-                            <li class="tab col s12 m4"><a class=" white-text active" href="#sintomasFib">Sintomas</a></li>
-                            <li class="tab col s12 m4"><a class=" white-text" href="#prevencaoFib">Prevenção</a></li>
-                            <li class="tab col s12 m4"><a class=" white-text" href="#tratamentoFib">Tratamento</a></li>
-                        </ul>
-                    </div>
-
-
-                    <div id="sintomasFib" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            <div class="col m12">
-                                O sintoma mais importante da fibromialgia é a dor difusa pelo corpo. A dor é sentida “nos ossos” ou “na carne” ou ao redor das articulações.
-                                <br> Outros sintomas comuns sãos:
-                            </div>
-                            <div class="col s12 m6">
-                                <ul class="listSint">
-                                    <li>
-                                        Sensibilidade ao toque;
-                                    </li>
-                                    <li>
-                                        Alteração no sono, tendendo ser superficial e/ou interrompido;
-                                    </li>
-                                    <li>
-                                        Síndrome das Pernas Inquietas;
-                                    </li>
-                                    <li>
-                                        Síndrome da Apneia do Sono;
-                                    </li>
-                                    <li>
-                                        Fadiga;
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col s12 m6">
-                                <ul class="listSint">
-                                    <li>
-                                        Depressão;
-                                    </li>
-                                    <li>
-                                        Problemas com memória;
-                                    </li>
-                                    <li>
-                                        Problemas de atenção;
-                                    </li>
-                                    <li>
-                                        Síndrome do Intestino Irritável;
-                                    </li>
-                                    <li>
-                                        Sensação de amortecimentos em mãos e pés e dores de cabeça frequentes.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="prevencaoFib" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            <div class="col m12">
-                                Embora a prevenção da fibromialgia não seja possível, algumas coisas podem ser feitas para melhorar a qualidade de vida, tais como:
-                            </div>
-                            <div class="col s12 m12 xl12">
-                                <ul class="listSint">
-                                    <li>
-                                        Hábitos e estilo e vidas saudáveis;
-                                    </li>
-                                    <li>
-                                        Alimentação saudável;
-                                    </li>
-                                    <li>
-                                        Acompanhamento psicológico.
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div id="tratamentoFib" class="col s12 fundoTab">
-                        <div class="col s12 m12 xl12">
-                            O tratamento da fibromialgia é realizado através do emprego de medicamentos e de outras medidas não medicamentosas, como:
-                            <br>Todo individuo acometido pela fibromialgia obrigatoriamente deve praticar alguma modalidade de atividade física. Em geral o paciente tem a liberdade de escolher aquela na qual se ajusta melhor. A preferência deve ser dada
-                            a atividades aeróbicas, como andar e nadar;
-                            <br> Os medicamentos utilizados são os antidepressivos, relaxantes musculares e os neuromoduladores;
-                            <br> Terapia Ocupacional e Psicoterapia também podem fazer parte do tratamento, fornecendo ajuda na reabilitação e a lidar com as situações estressantes causadas pela doença.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="importancia">
-            <div class="container white-text" style="padding-bottom: 20px;padding-top: 50px;">
-                <h3>
-                    Importância do Fevereiro Roxo
-                </h3>
-                <p>
-                    Como você pode notar, o Lúpus, a Fibromialgia e a doença de Alzheimer são três condições bem diferentes entre si, mas apresentam um ponto em comum: são incuráveis. Portanto, todas devem ser identificadas nos estágios iniciais para que seus sintomas sejam
-                    controlados ou retardados.
-                    <br><br> Por isso, o Fevereiro Roxo é uma campanha de conscientização promovida para incentivar o diagnóstico precoce. O objetivo é permitir que os pacientes tenham uma maior qualidade de vida mesmo convivendo com alguma dessas condições.
-                    Além disso, todas as três doenças apresentam sintomas iniciais que são relativamente inofensivos. Na maioria dos casos, o único sinal visível do Lúpus é a vermelhidão na pele, por exemplo.
-                    <br><br> O problema é ainda maior com a Fibromialgia, pois a fadiga e os problemas relacionados ao sono quase sempre são atribuídos ao estresse do dia a dia. Mesmo quando o paciente procura por um médico, muitas vezes acaba recebendo
-                    somente tratamentos para o cansaço, como suplementos vitamínicos, recomendação de se exercitar mais etc.
-                    <br><br> Quanto ao Alzheimer, a confusão mental e a perda da memória geralmente são atribuídas à idade avançada. Mas é importante lembrar que, na velhice saudável, o normal é a pessoa se esquecer de fatos triviais, mas continuar com
-                    aqueles que são marcantes na memória. Já o paciente com Alzheimer pode se lembrar de acontecimentos banais de sua infância e juventude, mas se esquecer de episódios importantes do último ano.
-                </p>
-            </div>
-        </section>
+            </scetion>
     </main>
-    <div id="fim" class="hide-on-small-only"></div>
 
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <form id="formConfirmacao">
+                <h4>Você confirma as informações a seguir antes de enviar?</h4>
+                <div class="row">
+                    <div class="input-field
+                                col s6">
+                        <input placeholder="Informe seu nome aqui" required disabled id="nomeConf" type="text" class="validate">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="input-field
+                                col s6">
+                        <input placeholder="dd/mm/aaaa" disabled id="nascConf" type="text" class="validate">
+                        <label for="nasc">Data
+                                    de
+                                    Nascimento
+                                    (dd/mm/aaaa)</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field
+                                col s12">
+                        <input id="emailConf" placeholder="a" disabled type="email" required class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field
+                                col s6">
+                        <textarea id="mensagemConf" placeholder="a" disabled class="materialize-textarea"></textarea>
+                        <label for="mensagem">Deixe seu comentário</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close
+                        waves-effect
+                        waves-green
+                        btn-flat">Não</a>
+            <a href="#!" class="modal-close
+                        waves-effect
+                        waves-red
+                        btn-flat">Sim</a>
+        </div>
+    </div>
+
+    <div id="fim" class="hide-on-small-only"></div>
     <footer class="purple darken-4">
         <div class="container center-align">
             Copyright (c) 2021 - Gabriel Valentim - Todos os direitos reservados.
@@ -539,16 +197,19 @@
     <script src="./js/materialize.min.js"></script>
     <script src="./js/index.js"></script>
     <script>
-        function mostrarTexto(){
-            var texto = document.getElementById("txtSaibaMais");
-            if(texto.style.display == "none"){
-                texto.style.display = "";
-            }else{
-                texto.style.display = "none"
-            }
+        document.addEventListener('DOMContentLoaded', function() {
 
+
+        });
+
+        function confirmar() {
+            document.getElementById("nomeConf").value = document.getElementById("nome").value
+            document.getElementById("emailConf").value = document.getElementById("email").value
+            document.getElementById("nascConf").value = document.getElementById("nasc").value
+            document.getElementById("mensagemConf").innerHTML = document.getElementById("mensagem").value
+            var instance = M.Modal.getInstance(document.getElementById("modalForm"));
+            instance.open();
         }
-        mostrarTexto()
     </script>
 </body>
 
