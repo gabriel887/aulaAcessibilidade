@@ -91,3 +91,13 @@ h3 {
 #formConfirmacao {
     color: black;
 }
+
+a:focus,
+a:hover {
+    border: 2px solid #F00;
+}
+
+.gif {
+    max-width: 500px;
+    max-height: 300px;
+}
